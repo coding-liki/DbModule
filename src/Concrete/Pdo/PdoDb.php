@@ -24,7 +24,7 @@ class PdoDb implements DbInterface
         $this->connection = new PDO($dsn, $login, $password, $params);
     }
 
-    public static function connect(array $params): self
+    public static function connect(array $params): static
     {
         $dbLogin = $params['login'];
         $dbPassword = $params['password'];
