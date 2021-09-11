@@ -1,0 +1,10 @@
+{
+    "name": "Db",
+    "vendor": "CodingLiki",
+    "version": "0.1",
+    "description": "Управление подключениями к базам данных",
+    "repo_url": "https://github.com/coding-liki/DbModule",
+    "depends_on": [
+        "CodingLiki/OoAutoloader"
+    ]
+}
