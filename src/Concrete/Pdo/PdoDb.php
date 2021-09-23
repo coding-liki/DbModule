@@ -1,12 +1,12 @@
 <?php
-namespace CodingLiki\Db\Concrete\Pdo;
+namespace CodingLiki\DbModule\Concrete\Pdo;
 
-use CodingLiki\Db\Concrete\Pdo\Drivers\DriverInterface;
-use CodingLiki\Db\Concrete\Pdo\Drivers\PostgreSqlDriver;
-use CodingLiki\Db\Concrete\Pdo\Exceptions\DriverIsNotInstalled;
-use CodingLiki\Db\Concrete\Pdo\Exceptions\DriverNotKnown;
-use CodingLiki\Db\DbInterface;
-use CodingLiki\Db\QueryResultInterface;
+use CodingLiki\DbModule\Concrete\Pdo\Drivers\DriverInterface;
+use CodingLiki\DbModule\Concrete\Pdo\Drivers\PostgreSqlDriver;
+use CodingLiki\DbModule\Concrete\Pdo\Exceptions\DriverIsNotInstalled;
+use CodingLiki\DbModule\Concrete\Pdo\Exceptions\DriverNotKnown;
+use CodingLiki\DbModule\DbInterface;
+use CodingLiki\DbModule\QueryResultInterface;
 use PDO;
 use PDOStatement;
 

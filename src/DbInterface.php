@@ -1,5 +1,5 @@
 <?php
-namespace CodingLiki\Db;
+namespace CodingLiki\DbModule;
 
 interface DbInterface
 {

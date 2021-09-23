@@ -1,8 +1,8 @@
 <?php
-namespace CodingLiki\Db;
+namespace CodingLiki\DbModule;
 
-use CodingLiki\Db\Concrete\Pdo\PdoDb;
-use CodingLiki\Db\Exceptions\DbTypeNotKnownException;
+use CodingLiki\DbModule\Concrete\Pdo\PdoDb;
+use CodingLiki\DbModule\Exceptions\DbTypeNotKnownException;
 
 class DbContainer
 {

@@ -1,7 +1,7 @@
 <?php
-namespace CodingLiki\Db\Concrete\Pdo;
+namespace CodingLiki\DbModule\Concrete\Pdo;
 
-use CodingLiki\Db\QueryResultInterface;
+use CodingLiki\DbModule\QueryResultInterface;
 use PDO;
 use PDOStatement;
 

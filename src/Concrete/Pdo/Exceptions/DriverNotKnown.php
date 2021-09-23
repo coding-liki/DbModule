@@ -1,5 +1,5 @@
 <?php
-namespace CodingLiki\Db\Concrete\Pdo\Exceptions;
+namespace CodingLiki\DbModule\Concrete\Pdo\Exceptions;
 
 class DriverNotKnown extends \Exception
 {

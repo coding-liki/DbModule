@@ -1,5 +1,5 @@
 <?php
-namespace CodingLiki\Db\Concrete\Pdo\Drivers;
+namespace CodingLiki\DbModule\Concrete\Pdo\Drivers;
 
 class PostgreSqlDriver implements DriverInterface
 {

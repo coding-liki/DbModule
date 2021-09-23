@@ -1,5 +1,5 @@
 <?php
-namespace CodingLiki\Db\Exceptions;
+namespace CodingLiki\DbModule\Exceptions;
 
 class DbTypeNotKnownException extends \Exception
 {
