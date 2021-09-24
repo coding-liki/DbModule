@@ -38,16 +38,22 @@ class PdoDb implements DbInterface
         return new static(static::buildDsnFromParams($params), $dbLogin, $dbPassword, $dbParams);
     }
 
-    public function query(string $query, array $params): QueryResultInterface
+    public function query(string $query, array $params = []): QueryResultInterface
     {
 
         [$normalizedQuery, $normalizedParams] = $this->normalizeQueryAndParams($query, $params);
 
-        $statement = $this->connection->prepare($normalizedQuery, [
+        $additionalParams = [
             PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL
-        ]);
+        ];
 
-        $statement($this->bindParametersToStatement($statement, $normalizedParams));
+        if(stripos($normalizedQuery, 'select') !== 0){
+            $additionalParams = [];
+        }
+        $statement = $this->connection->prepare($normalizedQuery, $additionalParams);
+
+
+        $this->bindParametersToStatement($statement, $normalizedParams);
 
         $executeResult = $statement->execute();
 
