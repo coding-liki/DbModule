@@ -60,6 +60,29 @@ class PdoDb implements DbInterface
         return new PdoQueryResult($statement);
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function getLastInsertId(?string $name = null)
+    {
+        return $this->connection->lastInsertId($name);
+    }
+
+    public function beginTransaction(): void
+    {
+        $this->connection->beginTransaction();
+    }
+
+    public function commit(): void
+    {
+        $this->connection->commit();
+    }
+
+    public function rollback(): void
+    {
+        $this->connection->rollBack();
+    }
+
     private function normalizeQueryAndParams(string $query, array $params)
     {
         foreach($params as $name => $parameter) {
