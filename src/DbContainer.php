@@ -14,11 +14,11 @@ class DbContainer
     /** 
      * @var DbInterface[]
      */
-    private static $databases = [];
+    private static array $databases = [];
 
     public static function get(string $dbName = 'main'): ?DbInterface
     {
-        return $databases[$dbName] ?? null;
+        return self::$databases[$dbName] ?? null;
     }
     
     public static function add(array $params, string $name = 'main'): DbInterface
