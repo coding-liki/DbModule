@@ -50,6 +50,7 @@ class PdoDb implements DbInterface
         if(stripos($normalizedQuery, 'select') !== 0){
             $additionalParams = [];
         }
+
         $statement = $this->connection->prepare($normalizedQuery, $additionalParams);
 
 
@@ -106,13 +107,13 @@ class PdoDb implements DbInterface
         foreach($params as $name => $value){
             switch(true){
                 case is_integer($value):
-                    $statement->bindParam($name, $value, PDO::PARAM_INT);
+                    $statement->bindParam($name, $params[$name], PDO::PARAM_INT);
                     break;
                 case is_bool($value):
-                    $statement->bindParam($name, $value, PDO::PARAM_BOOL);
+                    $statement->bindParam($name, $params[$name], PDO::PARAM_BOOL);
                     break;
                 default: 
-                    $statement->bindParam($name, $value);
+                    $statement->bindParam($name, $params[$name]);
                     break;
             }
         }

@@ -6,6 +6,7 @@ use CodingLiki\DbModule\Exceptions\DbTypeNotKnownException;
 
 class DbContainer
 {
+    public const DEFAULT_DB_NAME = 'main';
 
     private const KNOWN_DB_TYPES = [
         'pdo' => PdoDb::class
@@ -16,12 +17,12 @@ class DbContainer
      */
     private static array $databases = [];
 
-    public static function get(string $dbName = 'main'): ?DbInterface
+    public static function get(string $dbName = self::DEFAULT_DB_NAME): ?DbInterface
     {
         return self::$databases[$dbName] ?? null;
     }
     
-    public static function add(array $params, string $name = 'main'): DbInterface
+    public static function add(array $params, string $name = self::DEFAULT_DB_NAME): DbInterface
     {
         $dbType = $params['dbType'] ?? 'pdo';
 
