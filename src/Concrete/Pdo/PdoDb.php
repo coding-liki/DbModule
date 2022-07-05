@@ -2,6 +2,7 @@
 namespace CodingLiki\DbModule\Concrete\Pdo;
 
 use CodingLiki\DbModule\Concrete\Pdo\Drivers\DriverInterface;
+use CodingLiki\DbModule\Concrete\Pdo\Drivers\MySqlDriver;
 use CodingLiki\DbModule\Concrete\Pdo\Drivers\PostgreSqlDriver;
 use CodingLiki\DbModule\Concrete\Pdo\Exceptions\DriverIsNotInstalled;
 use CodingLiki\DbModule\Concrete\Pdo\Exceptions\DriverNotKnown;
@@ -16,6 +17,7 @@ class PdoDb implements DbInterface
         'postgreSql' => PostgreSqlDriver::class,
         'psql' => PostgreSqlDriver::class,
         'pgsql' => PostgreSqlDriver::class,
+        'mysql' => MySqlDriver::class
     ];
 
     private PDO $connection;
