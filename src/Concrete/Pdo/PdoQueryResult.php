@@ -33,6 +33,10 @@ class PdoQueryResult implements QueryResultInterface
     public function count(): int
     {
         return $this->statement->rowCount();
-    }
+  }
+  public function getRaw(): mixed
+  {
+    return $this->statement->fetch();
+  }
 }
 

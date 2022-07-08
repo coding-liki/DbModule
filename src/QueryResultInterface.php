@@ -10,6 +10,8 @@ interface QueryResultInterface
 
     public function getScalar(string|int $name);
 
-    public function count(): int;
+  public function count(): int;
+
+  public function getRaw(): mixed;
 }
 
